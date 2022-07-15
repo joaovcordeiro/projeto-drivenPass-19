@@ -1,0 +1,106 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  id       Int    @id @default(autoincrement())
+  email    String @unique
+  password String
+
+  Sections    Sections[]
+  Wifis       Wifis[]
+  Documents   Documents[]
+  Cards       Cards[]
+  SecureNotes SecureNotes[]
+  Credentials Credentials[]
+
+  @@map("users")
+}
+
+model Sections {
+  id     Int    @id @default(autoincrement())
+  answer String
+  token  String @unique
+
+  userId Int
+  user   Users @relation(fields: [userId], references: [id])
+
+  @@map("section")
+}
+
+model Wifis {
+  id           Int    @id @default(autoincrement())
+  networkName  String
+  wifiTitle    String
+  wifiPassword String
+
+  userId Int
+  user   Users @relation(fields: [userId], references: [id])
+
+  @@map("wifis")
+}
+
+model Documents {
+  id                 Int    @id @default(autoincrement())
+  documentType       String
+  ownerName          String
+  issueDate          String
+  expirationDate     String
+  registrationNumber String
+  issuingBody        String
+
+  userId Int
+  user   Users @relation(fields: [userId], references: [id])
+
+
+  @@map("documents")
+}
+
+model Cards {
+  id             Int     @id @default(autoincrement())
+  cardNumber     String
+  cardOwnerName  String
+  securityCode   String
+  expirationDate String
+  password       String
+  isVirtual      Boolean
+  cardType       String
+  cardName       String
+
+  userId Int
+  user   Users @relation(fields: [userId], references: [id])
+
+  @@map("cards")
+}
+
+model SecureNotes {
+  id         Int    @id @default(autoincrement())
+  noteTitle  String @unique
+  annotation String
+
+  userId Int
+  user   Users @relation(fields: [userId], references: [id])
+
+  @@map("security_notes")
+}
+
+model Credentials {
+  id              Int    @id @default(autoincrement())
+  userName        String
+  url             String
+  password        String
+  credentialTitle String
+
+  userId Int
+  user   Users @relation(fields: [userId], references: [id])
+
+  @@map("credentials")
+}
