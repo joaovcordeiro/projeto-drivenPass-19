@@ -1,0 +1,485 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "DrivenPassCollection",
+    "dateExported": "2022-07-17T21:44:10.945Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "fae50309-d56f-439e-80d1-36601acb3362",
+            "name": "authFolder",
+            "containerId": "",
+            "created": "2022-07-15T10:56:02.867Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "46cf682a-a41d-4e4f-a588-6e5a8f232aea",
+            "name": "credentialFolder",
+            "containerId": "",
+            "created": "2022-07-16T01:32:50.748Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "58325e85-f373-4779-8de6-5e6c580f93a5",
+            "name": "secureNoteFolder",
+            "containerId": "",
+            "created": "2022-07-17T05:07:48.482Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "2cbc3995-22e9-4677-9be0-718296e5c01b",
+            "name": "cardFolder",
+            "containerId": "",
+            "created": "2022-07-17T14:00:25.305Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "3caabbf4-b054-4799-89c3-25de42a66cfd",
+            "name": "wifiFolder",
+            "containerId": "",
+            "created": "2022-07-17T16:39:41.848Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "02974d5c-03c3-483f-9f10-b8e7a078be37",
+            "name": "documentFolder",
+            "containerId": "",
+            "created": "2022-07-17T17:56:45.092Z",
+            "sortNum": 60000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "1bf2f84a-e4a9-46dc-97f6-184867fdca98",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "fae50309-d56f-439e-80d1-36601acb3362",
+            "name": "createUser",
+            "url": "{{LOCAL_URL}}/sign-up",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2022-07-15T10:56:18.029Z",
+            "modified": "2022-07-17T21:28:41.097Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\": \"jjvictorac@gmail.com\",\n    \"password\": \"123412341234\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer"
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                }
+            ]
+        },
+        {
+            "_id": "ebd0f38c-ab31-4d8f-90b1-8e14932bde2d",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "fae50309-d56f-439e-80d1-36601acb3362",
+            "name": "userLogin",
+            "url": "{{LOCAL_URL}}/sign-in",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2022-07-15T17:32:28.974Z",
+            "modified": "2022-07-16T00:50:29.542Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\": \"jjvictorac@gmail.com\",\n    \"password\": \"123412341234\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "66fb7262-d3ba-4b3c-b50c-dcc7e8b1e94f",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "46cf682a-a41d-4e4f-a588-6e5a8f232aea",
+            "name": "createCredential",
+            "url": "{{LOCAL_URL}}/credential/create",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2022-07-16T01:33:03.073Z",
+            "modified": "2022-07-17T21:30:25.392Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"userName\": \"João\",\n    \"url\": \"https://www.horadecodar.com.br/2022/04/23/verificar-se-string-e-url-em-javascript/\",\n    \"password\": \"123412341234\",\n    \"credentialTitle\": \"ultimo Teste2\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{TOKEN}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "74d1b766-4c84-4d16-8d46-ea20d82d1bf9",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "46cf682a-a41d-4e4f-a588-6e5a8f232aea",
+            "name": "getAllCredentials",
+            "url": "{{LOCAL_URL}}/credential",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2022-07-17T03:36:40.497Z",
+            "modified": "2022-07-17T21:32:18.623Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{TOKEN}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "c9ffaa10-9bbd-4a2b-ba4f-7b3f0092d6ae",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "46cf682a-a41d-4e4f-a588-6e5a8f232aea",
+            "name": "getCredentialById",
+            "url": "{{LOCAL_URL}}/credential/13",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2022-07-17T03:51:25.307Z",
+            "modified": "2022-07-17T21:38:21.153Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{TOKEN}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "ec17a67b-8c9e-44c4-b056-d45fdb4ce635",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "46cf682a-a41d-4e4f-a588-6e5a8f232aea",
+            "name": "deleteCredentialById",
+            "url": "{{LOCAL_URL}}/credential/12",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2022-07-17T03:57:12.472Z",
+            "modified": "2022-07-17T21:32:56.057Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{TOKEN}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "95262016-501c-4a7e-af4a-10e1db10daf4",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "58325e85-f373-4779-8de6-5e6c580f93a5",
+            "name": "createSecureNote",
+            "url": "{{LOCAL_URL}}/secureNote/create",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2022-07-17T05:07:56.286Z",
+            "modified": "2022-07-17T21:33:26.748Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"noteTitle\": \"TESTE2\",\n    \"annotation\": \"É só isso\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{TOKEN}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "e1f5374b-ec9b-4596-8ea7-4955c40d4b2c",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "58325e85-f373-4779-8de6-5e6c580f93a5",
+            "name": "getAllSecureNotes",
+            "url": "{{LOCAL_URL}}/secureNote",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2022-07-17T13:11:29.954Z",
+            "modified": "2022-07-17T21:33:33.079Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{TOKEN}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "00595714-417a-4409-89c3-1f82368c5fff",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "58325e85-f373-4779-8de6-5e6c580f93a5",
+            "name": "getSecureNote",
+            "url": "{{LOCAL_URL}}/secureNote/7",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2022-07-17T13:13:51.769Z",
+            "modified": "2022-07-17T21:42:58.040Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{TOKEN}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "412aa502-397a-49fb-9dc4-09d839c93d4f",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "58325e85-f373-4779-8de6-5e6c580f93a5",
+            "name": "deleteSecureNote",
+            "url": "{{LOCAL_URL}}/secureNote/6",
+            "method": "DELETE",
+            "sortNum": 100000,
+            "created": "2022-07-17T13:15:02.609Z",
+            "modified": "2022-07-17T21:33:43.048Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{TOKEN}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "c3712bff-fc0c-4376-908d-1dbc61a7f767",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "2cbc3995-22e9-4677-9be0-718296e5c01b",
+            "name": "createCard",
+            "url": "{{LOCAL_URL}}/card/create",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2022-07-17T14:00:33.116Z",
+            "modified": "2022-07-17T21:33:54.403Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"cardNumber\": \"123456789012\",\n    \"cardOwnerName\": \"João\",\n    \"securityCode\": \"3042\",\n    \"expirationDate\": \"03/28\",\n    \"password\": \"3042\",\n    \"isVirtual\": true,\n    \"cardType\": \"credit\",\n    \"cardName\": \"Pets3\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{TOKEN}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "a44ff260-652a-4300-b5c6-031a7613b5b4",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "2cbc3995-22e9-4677-9be0-718296e5c01b",
+            "name": "getAllCards",
+            "url": "{{LOCAL_URL}}/card",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2022-07-17T15:28:03.655Z",
+            "modified": "2022-07-17T21:34:02.867Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{TOKEN}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "783cd787-96a1-4bfe-a58e-a0a007c263f8",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "2cbc3995-22e9-4677-9be0-718296e5c01b",
+            "name": "getCard",
+            "url": "{{LOCAL_URL}}/card/9",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2022-07-17T15:29:17.060Z",
+            "modified": "2022-07-17T21:34:13.433Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{TOKEN}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "d667ee28-9d91-47fa-bd02-78a76dd4ad10",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "2cbc3995-22e9-4677-9be0-718296e5c01b",
+            "name": "deleteCard",
+            "url": "{{LOCAL_URL}}/card/9",
+            "method": "DELETE",
+            "sortNum": 140000,
+            "created": "2022-07-17T15:30:21.866Z",
+            "modified": "2022-07-17T21:34:18.432Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{TOKEN}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "73927046-b223-4d0c-882a-79728720c685",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "3caabbf4-b054-4799-89c3-25de42a66cfd",
+            "name": "createWifi",
+            "url": "{{LOCAL_URL}}/wifi/create",
+            "method": "POST",
+            "sortNum": 150000,
+            "created": "2022-07-17T16:39:49.696Z",
+            "modified": "2022-07-17T21:35:50.580Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"networkName\": \"João\",\n    \"wifiTitle\": \"Teste1\",\n    \"password\": \"1234\"\n    \n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{TOKEN}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "0aa0a8cf-052b-4aee-82d7-054c589ded5b",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "3caabbf4-b054-4799-89c3-25de42a66cfd",
+            "name": "getAllWifis",
+            "url": "{{LOCAL_URL}}/wifi",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2022-07-17T16:43:35.726Z",
+            "modified": "2022-07-17T21:35:57.469Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{TOKEN}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "f6bf6718-bed5-4dc1-8e73-6ac59ad3b30e",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "3caabbf4-b054-4799-89c3-25de42a66cfd",
+            "name": "getWifi",
+            "url": "{{LOCAL_URL}}/wifi/10",
+            "method": "GET",
+            "sortNum": 170000,
+            "created": "2022-07-17T17:26:12.249Z",
+            "modified": "2022-07-17T21:43:40.907Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{TOKEN}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "c286b26c-64e2-4676-b1b8-e5e568a3445c",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "3caabbf4-b054-4799-89c3-25de42a66cfd",
+            "name": "deleteWifi",
+            "url": "{{LOCAL_URL}}/wifi/9",
+            "method": "DELETE",
+            "sortNum": 180000,
+            "created": "2022-07-17T17:26:38.632Z",
+            "modified": "2022-07-17T21:36:12.203Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{TOKEN}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "41e6c7e5-b7b0-45b1-860f-1f5c6d0c5928",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "02974d5c-03c3-483f-9f10-b8e7a078be37",
+            "name": "createDocument",
+            "url": "{{LOCAL_URL}}/document/create",
+            "method": "POST",
+            "sortNum": 190000,
+            "created": "2022-07-17T17:56:52.739Z",
+            "modified": "2022-07-17T21:36:19.226Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"documentType\": \"cnh\",\n    \"ownerName\": \"João Araujo\",\n    \"issueDate\": \"03/20\",\n    \"expirationDate\": \"06/25\",\n    \"registrationNumber\": \"87218412947813\",\n    \"issuingBody\": \"sp\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{TOKEN}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "d20eea69-ecfe-4ea7-acd0-76df55750c9c",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "02974d5c-03c3-483f-9f10-b8e7a078be37",
+            "name": "getAllDocuments",
+            "url": "{{LOCAL_URL}}/document",
+            "method": "GET",
+            "sortNum": 200000,
+            "created": "2022-07-17T21:16:06.393Z",
+            "modified": "2022-07-17T21:36:22.901Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{TOKEN}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "9b46da97-11be-446b-9782-bf5a6da965f5",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "02974d5c-03c3-483f-9f10-b8e7a078be37",
+            "name": "getDocument",
+            "url": "{{LOCAL_URL}}/document/8",
+            "method": "GET",
+            "sortNum": 220000,
+            "created": "2022-07-17T21:16:58.126Z",
+            "modified": "2022-07-17T21:43:51.117Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{TOKEN}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "bbdfafbf-7d7b-4ba6-bbc0-d43855e2ae29",
+            "colId": "8cd469ff-5bbc-43b4-ae01-8815e351c483",
+            "containerId": "02974d5c-03c3-483f-9f10-b8e7a078be37",
+            "name": "deleteDocument",
+            "url": "{{LOCAL_URL}}/document/7",
+            "method": "DELETE",
+            "sortNum": 230000,
+            "created": "2022-07-17T21:17:35.927Z",
+            "modified": "2022-07-17T21:36:42.059Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{TOKEN}}"
+            },
+            "tests": []
+        }
+    ]
+}

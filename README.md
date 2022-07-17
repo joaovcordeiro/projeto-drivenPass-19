@@ -65,18 +65,112 @@ API:
     - body: {
     }
     
-- POST /card/block 
-    - Rota para realizar o bloqueio do cartão
-    - headers: {}
+- POST /secureNote/create (autenticada)
+    - Rota para realizar a criação de uma nota segura
+    - headers: {authorization} (O token recebido na rota de login deve ser passado nesse header)
     - body: {
-        "cardId": 1,
-        "cardPassword": "1234",
+        "noteTitle": "teste",
+        "annotation": "teste"
     }
-- POST /card/unlock 
-    - Rota para realizar o desbloqueio do cartão
-    - headers: {}
+
+- GET /secureNote (autenticada)
+    - Rota que devolve todas as notas seguras pertencentes ao usuario
+    - headers: {authorization} (O token recebido na rota de login deve ser passado nesse header)
+    - body: {}
+
+- GET /secureNote/:id (autenticada)
+    - Rota que devolve a nota segura do usuario que bate com o id passado.
+    - headers: {authorization} (O token recebido na rota de login deve ser passado nesse header)
+    - body: {}
+
+- DELETE /secureNote/:id 
+    - Rota para realizar a remoção da nota segura do usuario que bate com o id passado
+    - headers: {authorization}
     - body: {
-        "cardId": 1,
-        "cardPassword": "1234",
     }
+
+- POST /card/create (autenticada)
+    - Rota para realizar a criação de um cartão
+    - headers: {authorization} (O token recebido na rota de login deve ser passado nesse header)
+    - body: {
+        "cardNumber": "123456789012",
+        "cardOwnerName": "João",
+        "securityCode": "304",
+        "expirationDate": "03/28",
+        "password": "3871",
+        "isVirtual": true,
+        "cardType": "credit", ("credit", "debit", "creditAndDebit")
+        "cardName": "Teste"
+    }
+
+- GET /card (autenticada)
+    - Rota que devolve todas as cartões pertencentes ao usuario
+    - headers: {authorization} (O token recebido na rota de login deve ser passado nesse header)
+    - body: {}
+
+- GET /card/:id (autenticada)
+    - Rota que devolve o cartão do usuario que bate com o id passado.
+    - headers: {authorization} (O token recebido na rota de login deve ser passado nesse header)
+    - body: {}
+
+- DELETE /card/:id 
+    - Rota para realizar a remoção do cartão do usuario que bate com o id passado
+    - headers: {authorization}
+    - body: {
+    }
+
+- POST /wifi/create (autenticada)
+    - Rota para realizar a criação de uma rede wifi
+    - headers: {authorization} (O token recebido na rota de login deve ser passado nesse header)
+    - body: {
+       "networkName": "João",
+        "wifiTitle": "Teste1",
+        "password": "1234"
+    }
+
+- GET /wifi (autenticada)
+    - Rota que devolve todas as redes wifi pertencentes ao usuario
+    - headers: {authorization} (O token recebido na rota de login deve ser passado nesse header)
+    - body: {}
+
+- GET /wifi/:id (autenticada)
+    - Rota que devolve a rede wifi do usuario que bate com o id passado.
+    - headers: {authorization} (O token recebido na rota de login deve ser passado nesse header)
+    - body: {}
+
+- DELETE /wifi/:id 
+    - Rota para realizar a remoção da rede wifi do usuario que bate com o id passado
+    - headers: {authorization}
+    - body: {
+    }
+
+- POST /document/create (autenticada)
+    - Rota para realizar a criação de um documento
+    - headers: {authorization} (O token recebido na rota de login deve ser passado nesse header)
+    - body: {
+       "documentType": "rg", ("rg", "chn")
+        "ownerName": "João",
+        "issueDate": "03/20",
+        "expirationDate": "06/25",
+        "registrationNumber": "87218412947813",
+        "issuingBody": "SSP"
+    }
+
+- GET /document (autenticada)
+    - Rota que devolve todas os documentos pertencentes ao usuario
+    - headers: {authorization} (O token recebido na rota de login deve ser passado nesse header)
+    - body: {}
+
+- GET /document/:id (autenticada)
+    - Rota que devolve o documento do usuario que bate com o id passado.
+    - headers: {authorization} (O token recebido na rota de login deve ser passado nesse header)
+    - body: {}
+
+- DELETE /document/:id 
+    - Rota para realizar a remoção do documento do usuario que bate com o id passado
+    - headers: {authorization}
+    - body: {
+    }
+
+
 ```
