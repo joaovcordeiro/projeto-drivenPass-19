@@ -23,6 +23,7 @@ $ npm run dev
 API:
 
 ```
+-- AUTHORIZATION
 - POST /sign-up
     - Rota para cadastrar um novo usuario
     - headers: {}
@@ -39,6 +40,7 @@ API:
     "password": "0123456789" (A senha deve possuir ao menos 10 caracteres)
     }
 
+--CREDENTIAL
 - POST /crendetial/create (autenticada)
     - Rota para realizar a criação de uma credencial
     - headers: {authorization} (O token recebido na rota de login deve ser passado nesse header)
@@ -64,6 +66,8 @@ API:
     - headers: {authorization}
     - body: {
     }
+
+-- SECURE-NOTE
     
 - POST /secureNote/create (autenticada)
     - Rota para realizar a criação de uma nota segura
@@ -88,6 +92,8 @@ API:
     - headers: {authorization}
     - body: {
     }
+
+--CARD
 
 - POST /card/create (autenticada)
     - Rota para realizar a criação de um cartão
@@ -119,6 +125,8 @@ API:
     - body: {
     }
 
+--WIFI
+
 - POST /wifi/create (autenticada)
     - Rota para realizar a criação de uma rede wifi
     - headers: {authorization} (O token recebido na rota de login deve ser passado nesse header)
@@ -143,6 +151,8 @@ API:
     - headers: {authorization}
     - body: {
     }
+
+--DOCUMENT
 
 - POST /document/create (autenticada)
     - Rota para realizar a criação de um documento
