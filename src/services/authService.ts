@@ -27,7 +27,7 @@ export async function signIn(user: User) {
         throw new Error("Password is incorrect");
     }
 
-    const token = jwt.sign({ id: verify.id, email: verify.email }, process.env.JWT_SECRET, { expiresIn: "1h" });
+    const token = jwt.sign({ id: verify.id, email: verify.email }, process.env.JWT_SECRET, { expiresIn: "1d" });
 
     await authRepository.insertSection({ userId: verify.id, token: token });
 

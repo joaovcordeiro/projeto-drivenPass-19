@@ -1,7 +1,6 @@
 import { prisma } from "../config/database.js";
 import { UserCreateData } from "../services/authService.js";
 
-
 export interface User {
     id: number;
     email: string;

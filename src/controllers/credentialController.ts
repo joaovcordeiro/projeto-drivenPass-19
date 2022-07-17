@@ -26,6 +26,10 @@ export async function getAllCredentials(req: Request, res: Response) {
         const token = req.headers.authorization;
         const credentials = await credentialService.getAllCredentials(token);
 
+        if (!token) {
+            res.status(401).json(new ResponseModel("Unauthorized", 401));
+        }
+
         res.json(new ResponseModel("Credentials fetched successfully", 200, credentials));
     }
     catch (error) {
@@ -37,6 +41,10 @@ export async function getCredential(req: Request, res: Response) {
     try {
         const token = req.headers.authorization;
         const credentialId = +req.params.id;
+
+        if (!token) {
+            res.status(401).json(new ResponseModel("Unauthorized", 401));
+        }
 
         const credential = await credentialService.getCredentialsById(token, credentialId);
 
@@ -51,6 +59,10 @@ export async function deleteCredential(req: Request, res: Response) {
     try {
         const token = req.headers.authorization;
         const credentialId = +req.params.id;
+
+        if (!token) {
+            res.status(401).json(new ResponseModel("Unauthorized", 401));
+        }
 
         const credential = await credentialService.deleteCredentialById(token, credentialId);
 

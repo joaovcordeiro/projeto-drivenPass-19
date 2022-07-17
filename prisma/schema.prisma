@@ -36,10 +36,10 @@ model Sections {
 }
 
 model Wifis {
-  id           Int    @id @default(autoincrement())
-  networkName  String
-  wifiTitle    String
-  wifiPassword String
+  id          Int    @id @default(autoincrement())
+  networkName String
+  wifiTitle   String
+  password    String
 
   userId Int
   user   Users @relation(fields: [userId], references: [id])
