@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/Offjhonjhon/projeto-valex-18-API">
+  <a href="https://github.com/Offjhonjhon/projeto-drivenPass-19">
     <img src="./readme.png" alt="readme-logo" width="80" height="80">
   </a>
 
@@ -11,7 +11,7 @@
 ## Usage
 
 ```bash
-$ git clone https://github.com/Offjhonjhon/projeto-valex-18-API.git
+$ git clone https://github.com/Offjhonjhon/projeto-drivenPass-19.git
 
 $ cd projeto-drivenPass-19
 
